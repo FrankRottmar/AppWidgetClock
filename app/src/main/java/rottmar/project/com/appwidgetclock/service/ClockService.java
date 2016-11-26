@@ -6,11 +6,10 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.widget.RemoteViews;
 
 import rottmar.project.com.appwidgetclock.R;
-import rottmar.project.com.appwidgetclock.activity.ClockWidget;
+import rottmar.project.com.appwidgetclock.provider.ClockWidget;
 import rottmar.project.com.appwidgetclock.util.DateUtil;
 
 /**
@@ -40,7 +39,6 @@ public class ClockService extends Service {
         ComponentName thisWidget = new ComponentName(this, ClockWidget.class);
         AppWidgetManager manager = AppWidgetManager.getInstance(this);
         manager.updateAppWidget(thisWidget, view);
-        Log.d(ClockService.class.getName(),"ClockService Call");
     }
 
     @Nullable

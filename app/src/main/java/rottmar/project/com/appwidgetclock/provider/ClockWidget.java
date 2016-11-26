@@ -1,4 +1,4 @@
-package rottmar.project.com.appwidgetclock.activity;
+package rottmar.project.com.appwidgetclock.provider;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -38,7 +38,6 @@ public class ClockWidget extends AppWidgetProvider {
         for (int appWidgetId : appWidgetIds) {
             updateAppWidget(context, appWidgetManager, appWidgetId);
         }
-        Log.d(ClockWidget.class.getName(), "frequently update");
         alarm(context);
     }
 
@@ -48,7 +47,6 @@ public class ClockWidget extends AppWidgetProvider {
         if (intent.getAction().equals("android.intent.action.SCREEN_ON")){
             Log.d(ClockWidget.class.getName(), "screenOn");
         }
-        Log.d(ClockWidget.class.getName(), intent.getAction());
     }
 
     @Override
@@ -77,7 +75,6 @@ public class ClockWidget extends AppWidgetProvider {
         }
 
         m.setRepeating(AlarmManager.RTC, TIME.getTime().getTime(), 1000, service);
-        Log.d(ClockWidget.class.getName(), "alarm");
     }
 }
 
