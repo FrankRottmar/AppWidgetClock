@@ -28,7 +28,6 @@ public class ClockWidget extends AppWidgetProvider {
         for (int appWidgetId : appWidgetIds) {
             updateAppWidget(context, appWidgetManager, appWidgetId);
         }
-
     }
 
     @Override

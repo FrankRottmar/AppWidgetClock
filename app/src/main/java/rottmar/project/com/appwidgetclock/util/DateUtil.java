@@ -13,7 +13,20 @@ public class DateUtil {
     public String getTime(){
         int min = cal.get(Calendar.MINUTE);
         int hour = cal.get(Calendar.HOUR_OF_DAY);
-        return hour + " : " + min;
+
+        String time = null;
+
+        if(cal.get(Calendar.HOUR_OF_DAY) <= 9 && cal.get(Calendar.MINUTE) <= 9){
+            time = "0" + hour +":" + "0" + min;
+        }else if(cal.get(Calendar.HOUR_OF_DAY)>= 10 && cal.get(Calendar.MINUTE) <= 9){
+           time = hour +":" + "0" + min;
+        }else if(cal.get(Calendar.HOUR_OF_DAY) <= 9 && cal.get(Calendar.MINUTE) >= 10){
+            time = "0" + hour +":" + min;
+        }else  {
+            time = hour + ":" + min;
+        }
+
+        return time;
     }
 
     public String getDate() {
