@@ -19,15 +19,22 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".ClockWidget">
+        <receiver android:name=".activity.ClockWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <action android:name=".activity.REQUEST_WIDGET_UPDATE" />
             </intent-filter>
 
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/clock_widget_info" />
         </receiver>
+
+        <service
+            android:name=".service.ClockService"
+            android:exported="false">
+        </service>
     </application>
 
 </manifest>
