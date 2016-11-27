@@ -19,8 +19,12 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/yee"
-                android:id="@+id/imageView3" />
+                app:srcCompat="@mipmap/yee"
+                android:id="@+id/imageView3"
+                android:contentDescription="@string/background"
+                android:layout_centerInParent="true"
+                android:foregroundGravity="center"
+                />
 
             <TextView
                 android:id="@+id/appwidget_text"
@@ -33,8 +37,7 @@
                 android:textStyle="bold|italic"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
-                android:gravity="center"
-                android:layout_weight="0.46" />
+                android:gravity="center"/>
         </RelativeLayout>
 
     </LinearLayout>
